@@ -76,9 +76,15 @@ Navigation
 
 
 footer {
-    background-color: #1c1d1e;
-    padding: 2.5rem 0rem;
-    text-align: center;
+  height: 5rem;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+  background-color: #1c1d1e;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  text-align: center;
 }
 
 footer ul li {
