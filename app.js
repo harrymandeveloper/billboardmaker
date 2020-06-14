@@ -9,8 +9,10 @@
   let saturation = 50;
   let lightness = 50;
 
-  // This is the test JSON file.
-  // Once this is working, this will be replaced with an open API request
+  // This is the test JSON file in the form of a basic array of strings.
+  // This was used to test the code and has been replaced by an API request.
+  // In production I would remove code artefacts like this one.
+
   const testJSON = [
     "Pay Someone a Compliment",
     "Draw a Picture for Someone You Love",
@@ -18,6 +20,14 @@
     "Treat yourself once in a while",
     "Look at the order not the structure",
   ];
+
+  //   billboardText.addEventListener("click", () => {
+  //   let randomNumber = Math.floor(Math.random() * 11);
+  //   textCount = (textCount + randomNumber) % testJSON.length;
+  //   let newText = testJSON[textCount];
+  //   billboardText.innerHTML = `${newText}`;
+  // });
+
 
   billboardBackground.addEventListener("click", () => {
     clickCount += 50;
@@ -27,32 +37,24 @@
     body.style.backgroundColor = `${hsl}`;
   });
 
-//   billboardText.addEventListener("click", () => {
-//     let randomNumber = Math.floor(Math.random() * 11);
-//     textCount = (textCount + randomNumber) % testJSON.length;
-//     let newText = testJSON[textCount];
-//     billboardText.innerHTML = `${newText}`;
-//   });
 
-
-// This is our API request in progress.
+// This is our API request.
 
 
   billboardText.addEventListener("click", () => {
-    let randomNumber = Math.floor(Math.random() * 11);
-    textCount = (textCount + randomNumber) % testJSON.length;
+    // let randomNumber = Math.floor(Math.random() * 11);
+    // textCount = (textCount + randomNumber) % testJSON.length;
 
     fetch('https://api.adviceslip.com/advice')
     .then(response => {
       return response.json()
     })
     .then(data => {
-      // Work with JSON data here
       billboardText.innerHTML = `${data.slip.advice}`;
       console.log(data.slip.advice)
     })
     .catch(err => {
-      console.log("Nothing to see here");
+      console.log("Oh my, there are some errors.");
     });
 
   });
