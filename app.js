@@ -27,27 +27,34 @@
     body.style.backgroundColor = `${hsl}`;
   });
 
+//   billboardText.addEventListener("click", () => {
+//     let randomNumber = Math.floor(Math.random() * 11);
+//     textCount = (textCount + randomNumber) % testJSON.length;
+//     let newText = testJSON[textCount];
+//     billboardText.innerHTML = `${newText}`;
+//   });
+
+
+// This is our API request in progress.
+
+
   billboardText.addEventListener("click", () => {
     let randomNumber = Math.floor(Math.random() * 11);
     textCount = (textCount + randomNumber) % testJSON.length;
-    let newText = testJSON[textCount];
-    billboardText.innerHTML = `${newText}`;
-  });
 
+    fetch('https://api.adviceslip.com/advice')
+    .then(response => {
+      return response.json()
+    })
+    .then(data => {
+      // Work with JSON data here
+      billboardText.innerHTML = `${data.slip.advice}`;
+      console.log(data.slip.advice)
+    })
+    .catch(err => {
+      console.log("Nothing to see here");
+    });
 
-  // This is our API request in progress.
-
-// Replace ./data.json with your JSON feed
-fetch('https://api.adviceslip.com/advice')
-  .then(response => {
-    return response.json()
-  })
-  .then(data => {
-    // Work with JSON data here
-    console.log(data.slip.advice)
-  })
-  .catch(err => {
-    console.log("Nothing to see here");
   });
 
 })(document);
