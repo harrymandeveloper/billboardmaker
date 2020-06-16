@@ -22,3 +22,4 @@ Click on the text to rotate the background colour and receive new advice!
 - To remove explicit language from API requests.
 - To remove occasional character errors with quotemarks from the API requests.
 - To add a live analytics dashboard.
+- Add an interval timer that rotates advice automatically.
