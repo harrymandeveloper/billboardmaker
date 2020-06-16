@@ -1,13 +1,15 @@
 # Billboard Maker
 
 
-Ever wanted to receive life advice in giant writing? Now you can have it!
+## About
 
-A simple app that uses the advice slip api here: https://api.adviceslip.com/
+A simple advice generator that displays advice in the style of a billboard.
 
-Click on the text to rotate and receive new advice.
+This app uses the advice slip api here: https://api.adviceslip.com/
 
 
-# Installation
+## Installation
 
-Download the zip and open index.html and away you go.
+Download the zip and open index.html and away you go!
+
+Click on the text to rotate the background colour and receive new advice!
