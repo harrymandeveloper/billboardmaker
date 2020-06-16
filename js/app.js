@@ -33,7 +33,6 @@
     clickCount += 50;
     hue = Math.round(clickCount);
     let hsl = "hsl(" + hue + ", " + saturation + "%, " + lightness + "%)";
-    console.log(hsl);
     body.style.backgroundColor = `${hsl}`;
   });
 
@@ -51,7 +50,6 @@
     })
     .then(data => {
       billboardText.innerHTML = `${data.slip.advice}`;
-      console.log(data.slip.advice)
     })
     .catch(err => {
       console.log("Oh my, there are some errors.");
